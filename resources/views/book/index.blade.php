@@ -23,7 +23,7 @@
             <li>Ano de publicação: {{$book->published}}</li>
             <br>
             <div>
-                <a href="{{route('book.show', ['bookModel' => $book->id])}}">Visualizar</a> |
+                <a href="{{route('book.edit', ['bookModel' => $book->id])}}">Editar</a>
             </div>
             <hr>
         </ul>
