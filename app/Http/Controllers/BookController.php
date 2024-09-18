@@ -9,7 +9,8 @@ use App\Models\BookModel;
 class BookController extends Controller
 {
     public function index(){
-        return view('book.index');
+        $books = BookModel::orderBy('created_at')->get();
+        return view('book.index', ['books' => $books]);
     }
 
     public function create(){
