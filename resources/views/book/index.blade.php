@@ -14,5 +14,22 @@
             </div>
         </nav>
     </header>
+
+    <section>
+        @forelse($books as $book)
+        <ul>
+            <li>Titulo do livro: {{$book->title}}</li>
+            <li>Categoria do livro: {{$book->category}}</li>
+            <li>Ano de publicação: {{$book->published}}</li>
+            <br>
+            <div>
+                <a href="{{route('book.show', ['bookModel' => $book->id])}}">Visualizar</a> |
+            </div>
+            <hr>
+        </ul>
+        @empty
+        <p style="color: red;">Lista está vazia. Cadastre um novo pet perdido</p>
+        @endforelse
+    </section>
 </body>
 </html>
