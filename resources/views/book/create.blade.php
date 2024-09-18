@@ -14,7 +14,7 @@
     </header>
 
     <div>
-        @if($erros->any())
+        @if($errors->any())
 
             @foreach($errors->all() as $error)
 
