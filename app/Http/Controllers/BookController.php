@@ -45,4 +45,10 @@ class BookController extends Controller
 
         return redirect()->route('book.show', ['bookModel' => $bookModel->id])->with('sucess', "Edição realizada com sucesso");
     }
+
+    public function destroy(BookModel $bookModel){
+        $bookModel->delete();
+
+        return redirect()->route('book.index')->with('sucess', "Livro excluído com sucesso");
+    }
 }

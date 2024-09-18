@@ -12,4 +12,5 @@ Route::get('/book-index', [BookController::class, 'index'])->name('book.index');
 Route::get('/book-create', [BookController::class, 'create'])->name('book.create');
 Route::post('/book-store', [BookController::class, 'store'])->name('book.store');
 Route::get('/book-show/{bookModel}', [BookController::class, 'show'])->name('book.show');
-Route::get('book-edit/{bookModel}', [BookController::class, 'edit'])->name('book.edit');
+Route::get('/book-edit/{bookModel}', [BookController::class, 'edit'])->name('book.edit');
+Route::put('/book-update/{bookModel}', [BookController::class, 'update'])->name('book.update');
