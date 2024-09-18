@@ -8,8 +8,6 @@ Route::get('/', function (){
     return view('welcome');
 });
 
-Route::controller(BookController::class)->group(function(){
-    Route::get('/books', 'index')->name('book.index');
-    Route::get('/book', 'create')->name('book.create');
-    Route::post('/book', 'store')->name('book.store');
-});
+Route::get('/book-index', [BookController::class, 'index'])->name('book.index');
+Route::get('/book-create', [BookController::class, 'create'])->name('book.create');
+Route::post('/book-store', [BookController::class, 'store'])->name('book.store');
