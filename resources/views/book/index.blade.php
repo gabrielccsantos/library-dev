@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Dev</title>
 </head>
+
 <body>
     <header>
         <h1>Listagem de todos os livros</h1>
@@ -14,7 +16,15 @@
             </div>
         </nav>
     </header>
+    <div>
+        @if(session('sucess'))
 
+        <span style="color: green;">
+            {{session('sucess')}}
+        </span>
+
+        @endif
+    </div>
     <section>
         @forelse($books as $book)
         <ul>
@@ -23,7 +33,14 @@
             <li>Ano de publicação: {{$book->published}}</li>
             <br>
             <div>
-                <a href="{{route('book.edit', ['bookModel' => $book->id])}}">Editar</a>
+                <a href="{{route('book.edit', ['bookModel' => $book->id])}}">
+                    <button type="button">Editar</button>
+                </a>
+                <form action="{{route('book.destroy', ['bookModel' => $book->id])}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit">Deletar</button>
+                </form>
             </div>
             <hr>
         </ul>
@@ -32,4 +49,5 @@
         @endforelse
     </section>
 </body>
+
 </html>
