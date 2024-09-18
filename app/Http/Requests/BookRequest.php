@@ -22,18 +22,18 @@ class BookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'book_title' => 'required',
-            'book_category' => 'required',
-            'book_published' => 'required'
+            'title' => 'required',
+            'category' => 'required',
+            'published' => 'required'
         ];
     }
 
     public function mensages(): array
     {
         return [
-            'required.book_title' => 'Campo Título do livro é obrigatório',
-            'required.book_category' => 'Campo Categória do livro é obrigatório',
-            'required.book_published' => 'Campo Ano de Publicação é obrigatório'
+            'required.title' => 'Campo Título do livro é obrigatório',
+            'required.category' => 'Campo Categória do livro é obrigatório',
+            'required.published' => 'Campo Ano de Publicação é obrigatório'
         ];
     }
 }
