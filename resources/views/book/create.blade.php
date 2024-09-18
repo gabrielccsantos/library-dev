@@ -28,18 +28,18 @@
         <form action="{{route('book.store')}}" method="post">
             @csrf
             <div>
-                <label for="book_title">Titulo do livro: </label>
-                <input type="text" name="book_title" id="book_title">
+                <label for="title">Titulo do livro: </label>
+                <input type="text" name="title" id="title">
             </div>
 
             <div>
-                <label for="book_category">Titulo do livro: </label>
-                <input type="text" name="book_category" id="book_category">
+                <label for="category">Categoria do livro: </label>
+                <input type="text" name="category" id="category">
             </div>
 
             <div>
-                <label for="book_published">Titulo do livro: </label>
-                <input type="text" name="book_published" id="book_published">
+                <label for="published">Ano de publicação: </label>
+                <input type="text" name="published" id="published">
             </div>
 
             <div>
