@@ -16,7 +16,7 @@
     <div>
         @if($erros->any())
 
-            @foreach($erros->all() as $error)
+            @foreach($errors->all() as $error)
 
                 {{$error}} <br>
 
