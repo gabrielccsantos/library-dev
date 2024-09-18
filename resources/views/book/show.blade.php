@@ -21,7 +21,7 @@
         Ano de publicação: {{$bookModel->published}}
     </section>
     <div>
-        <a href="{{route('book.index')}}">Inicio</a> <br>
+        <a href="{{route('book.index')}}">Listar todos</a> <br>
         <a href="{{route('book.create')}}">Cadastrar um novo livro</a> <br>
     </div>
 </body>
