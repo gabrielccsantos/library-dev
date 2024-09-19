@@ -14,27 +14,34 @@
 </div>
 
 <section>
-    <form action="{{route('book.store')}}" method="post">
-        @csrf
-        <div>
-            <label for="title">Titulo do livro: </label>
-            <input type="text" name="title" id="title">
-        </div>
+    <div class="d-flex justify-content-center align-items-center">
 
-        <div>
-            <label for="category">Categoria do livro: </label>
-            <input type="text" name="category" id="category">
-        </div>
+        <div class="bg-light rounded p-3 " style="width: 500px;">
+            <form action="{{route('book.store')}}" method="post">
+                @csrf
+                <div class="mb-3">
+                    <label for="title">Titulo do livro: </label>
+                    <input type="text" name="title" id="title">
+                </div>
 
-        <div>
-            <label for="published">Ano de publicação: </label>
-            <input type="text" name="published" id="published">
-        </div>
+                <div class="mb-3">
+                    <label for="category">Categoria do livro: </label>
+                    <input type="text" name="category" id="category">
+                </div>
 
-        <div>
-            <input type="submit" value="Cadastrar">
+                <div class="mb-3">
+                    <label for="published">Ano de publicação: </label>
+                    <input type="text" name="published" id="published">
+                </div class="mb-3">
+
+                <div class="mb-3">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary">
+                    <input type="reset" value="Limpar" class="btn btn-secondary">
+                </div>
+
+            </form>
         </div>
-    </form>
+    </div>
 </section>
 
 @endsection

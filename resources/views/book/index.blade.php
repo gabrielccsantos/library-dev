@@ -2,36 +2,44 @@
 
 @section('content')
 
-    @if(session('sucess'))
+@if(session('sucess'))
 
-    <span style="color: green;">
-        {{session('sucess')}}
-    </span>
+<span style="color: green;">
+    {{session('sucess')}}
+</span>
 
-    @endif
+@endif
 </div>
 <section>
-    @forelse($books as $book)
-    <ul>
-        <li>Titulo do livro: {{$book->title}}</li>
-        <li>Categoria do livro: {{$book->category}}</li>
-        <li>Ano de publicação: {{$book->published}}</li>
-        <br>
-        <div>
-            <a href="{{route('book.edit', ['bookModel' => $book->id])}}">
-                <button type="button">Editar</button>
-            </a>
-            <form action="{{route('book.destroy', ['bookModel' => $book->id])}}" method="POST">
-                @csrf
-                @method('delete')
-                <button type="submit">Deletar</button>
-            </form>
-        </div>
-        <hr>
-    </ul>
-    @empty
-    <p style="color: red;">Lista está vazia. Cadastre um novo pet perdido</p>
-    @endforelse
+    <table class="table table-primary table-striped-columns">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Título</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Ano de publicação</th>
+                <th scope="col">Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($books as $book)
+            <tr>
+                <th scope="row">{{$book->id}}</th>
+                <td scope="row">{{$book->title}}</td>
+                <td scope="row">{{$book->category}}</td>
+                <td scope="row">{{$book->published}}</td>
+                <td scope="row">
+                    <a href="{{route('book.show', ['bookModel' => $book->id])}}">
+                        <button type="button" class="btn btn-primary">Visualizar</button>
+                    </a>
+                    <a href="{{route('book.edit', ['bookModel' => $book->id])}}">
+                        <button type="button" class="btn btn-primary">Editar</button>
+                    </a>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </section>
 
 @endsection
