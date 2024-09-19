@@ -55,10 +55,10 @@ No terminal irá aparecer um link com o localhost
 
 Endpoints:
 
-index -> /book-index (GET) - Listagem de todos os livros
-create -> /book-create (GET) - formulário de cadastro de um novo livro
-store -> /book-store (POST) - Rota para onde o cadastro é enviado
-show -> /book-show/{id} (GET) - Visualização do livro segundo ID
-edit -> /book-edit/{id} (GET) - Formulário de edição de um livro
-update -> /book-update/{id} (PUT) - Rota para onde a edição é enviada
-destroy -> /book-destroy/{id} (DELETE) - Rota para a exclusão de algum registro
++ index -> /book-index (GET) - Listagem de todos os livros
++ create -> /book-create (GET) - formulário de cadastro de um novo livro
++ store -> /book-store (POST) - Rota para onde o cadastro é enviado
++ show -> /book-show/{id} (GET) - Visualização do livro segundo ID
++ edit -> /book-edit/{id} (GET) - Formulário de edição de um livro
++ update -> /book-update/{id} (PUT) - Rota para onde a edição é enviado
++ destroy -> /book-destroy/{id} (DELETE) - Rota para a exclusão de algum registro
