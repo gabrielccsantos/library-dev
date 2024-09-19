@@ -18,6 +18,7 @@
                 <th scope="col">Título</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Ano de publicação</th>
+                <th scope="col">Data de Cadastro</th>
                 <th scope="col">Ação</th>
             </tr>
         </thead>
@@ -28,6 +29,7 @@
                 <td scope="row">{{$book->title}}</td>
                 <td scope="row">{{$book->category}}</td>
                 <td scope="row">{{$book->published}}</td>
+                <td scope="row">{{$book->created_at->format('H:i:s d/m/Y')}}</td>
                 <td scope="row">
                     <a href="{{route('book.show', ['bookModel' => $book->id])}}">
                         <button type="button" class="btn btn-primary">Visualizar</button>
