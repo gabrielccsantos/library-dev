@@ -34,7 +34,7 @@ Apague o '.example.copy' e apenas deixe .env
 
 5º Gere uma nova chave de aplicação
 Execute esse comando no terminal no source da pasta
-php artisan key:generate
++ php artisan key:generate
 
 6º Configurar as variáveis de ambiente do banco de dados
 
