@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($books as $book)
+            @forelse($books as $book)
             <tr>
                 <th scope="row">{{$book->id}}</th>
                 <td scope="row">{{$book->title}}</td>
@@ -37,7 +37,9 @@
                     </a>
                 </td>
             </tr>
-            @endforeach
+            @empty
+            <p style="color: red;">A lista está vazia.</p>
+            @endforelse
         </tbody>
     </table>
 </section>
