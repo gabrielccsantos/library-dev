@@ -1,66 +1,64 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+LIBRARY DEV
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto é um CRUD (Create, Read, Update, Delete) básico desenvolvido com o framework Laravel. O sistema permite criar, visualizar, atualizar e deletar registros no banco de dados.
 
-## About Laravel
+TECNOLOGIAS UTILIZADAS
+- PHP (8.2.22)
+- Composer (2.7.8)
+- Laravel (11.x)
+- MySQL
+- XAMPP
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+PARA INSTALAR E RODAR O PROJETO
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1º Baixe o projeto do github
+git clone git@github.com:gabrielccsantos/library-dev.git
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2º Acesse a pasta onde baixou o projeto
+cd seu-repositório
 
-## Learning Laravel
+Abra o projeto na sua IDE de preferência (A utilizada para programar foi o VS Code)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Agora um pouco mais de atenção para rodar o projeto na sua máquina.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+abra o terminal e execute os seguintes comando
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3º Instalar as dependências do Composer
+composer install
 
-## Laravel Sponsors
+4º Copie o arquivo .env.example
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Depois de copiar ele ficará assim: .env.example.copy
 
-### Premium Partners
+Apague o '.example.copy' e apenas deixe .env
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+5º Gere uma nova chave de aplicação
+Execute esse comando no terminal no source da pasta
+php artisan key:generate
 
-## Contributing
+6º Configurar as variáveis de ambiente do banco de dados
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=library_dev_db
+DB_USERNAME=root
+DB_PASSWORD=
 
-## Code of Conduct
+7º Rode as migrações para criar as tabelas no banco de dados
+php artisan migrate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8º Para iniciar o projeto:
+php artisan serve
 
-## Security Vulnerabilities
+No terminal irá aparecer um link com o localhost
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Endpoints:
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+index -> /book-index (GET) - Listagem de todos os livros
+create -> /book-create (GET) - formulário de cadastro de um novo livro
+store -> /book-store (POST) - Rota para onde o cadastro é enviado
+show -> /book-show/{id} (GET) - Visualização do livro segundo ID
+edit -> /book-edit/{id} (GET) - Formulário de edição de um livro
+update -> /book-update/{id} (PUT) - Rota para onde a edição é enviada
+destroy -> /book-destroy/{id} (DELETE) - Rota para a exclusão de algum registro
