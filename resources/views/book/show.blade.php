@@ -15,6 +15,18 @@
             Titulo do livro: {{$bookModel->title}} <br>
             Categoria do livro: {{$bookModel->category}} <br>
             Ano de publicação: {{$bookModel->published}}
+            <br>
+            <br>
+            <div>
+                <form action="{{route('book.destroy', ['bookModel' => $bookModel->id])}}" method="post">
+                    <a href="{{route('book.edit', ['bookModel' => $bookModel->id])}}">
+                        <button type="button" class="btn btn-primary">Editar</button>
+                    </a>
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
+            </div>
         </div>
     </div>
 </section>
