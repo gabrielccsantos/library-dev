@@ -1,15 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-<header>
-    <h1>Listagem de todos os livros</h1>
-    <nav>
-        <div>
-            <a href="{{route('book.create')}}">Cadastrar um novo livro</a>
-        </div>
-    </nav>
-</header>
-<div>
+
     @if(session('sucess'))
 
     <span style="color: green;">

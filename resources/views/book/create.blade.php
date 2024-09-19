@@ -1,12 +1,6 @@
 @extends('layout.main')
 
 @section('content')
-<header>
-    <h1>Cadastre um novo livro</h1>
-    <nav>
-        <a href="{{route('book.index')}}">Listar</a>
-    </nav>
-</header>
 
 <div>
     @if($errors->any())
