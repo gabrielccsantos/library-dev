@@ -46,10 +46,10 @@ Execute esse comando no terminal no source da pasta
 + DB_PASSWORD=
 
 7º Rode as migrações para criar as tabelas no banco de dados
-php artisan migrate
++ php artisan migrate
 
 8º Para iniciar o projeto:
-php artisan serve
++ php artisan serve
 
 No terminal irá aparecer um link com o localhost
 
