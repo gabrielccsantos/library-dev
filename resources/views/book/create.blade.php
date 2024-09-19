@@ -21,17 +21,17 @@
                 @csrf
                 <div class="mb-3">
                     <label for="title">Titulo do livro: </label>
-                    <input type="text" name="title" id="title">
+                    <input type="text" name="title" id="title" value="{{old('title')}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="category">Categoria do livro: </label>
-                    <input type="text" name="category" id="category">
+                    <input type="text" name="category" id="category" value="{{old('category')}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="published">Ano de publicação: </label>
-                    <input type="text" name="published" id="published">
+                    <input type="text" name="published" id="published" value="{{old('published')}}">
                 </div class="mb-3">
 
                 <div class="mb-3">
