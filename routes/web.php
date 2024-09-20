@@ -8,10 +8,12 @@ Route::get('/', function (){
     return view('welcome');
 });
 
-Route::get('/books', [BookController::class, 'index'])->name('book.index');
-Route::get('/books/create', [BookController::class, 'create'])->name('book.create');
-Route::post('/books', [BookController::class, 'store'])->name('book.store');
-Route::get('/books/{bookModel}', [BookController::class, 'show'])->name('book.show');
-Route::get('/books/{bookModel}/edit', [BookController::class, 'edit'])->name('book.edit');
-Route::put('/books/{bookModel}/', [BookController::class, 'update'])->name('book.update');
-Route::delete('/books/{bookModel}', [BookController::class, 'destroy'])->name('book.destroy');
+Route::controller(BookController::class)->group(function(){
+    Route::get('/books', 'index')->name('book.index');
+    Route::get('/books/create', 'create')->name('book.create');
+    Route::post('/books', 'store')->name('book.store');
+    Route::get('/books/{bookModel}', 'show')->name('book.show');
+    Route::get('/books/{bookModel}/edit', 'edit')->name('book.edit');
+    Route::put('/books/{bookModel}/', 'update')->name('book.update');
+    Route::delete('/books/{bookModel}', 'destroy')->name('book.destroy');
+});
