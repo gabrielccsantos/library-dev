@@ -24,7 +24,7 @@ class BookRequest extends FormRequest
         return [
             'title' => 'required',
             'category' => 'required',
-            'published' => 'required'
+            'published' => 'required|digits:4|integer|min:1900|max:' . date('Y')
         ];
     }
 
@@ -33,7 +33,11 @@ class BookRequest extends FormRequest
         return [
             'required.title' => 'Campo Título do livro é obrigatório',
             'required.category' => 'Campo Categória do livro é obrigatório',
-            'required.published' => 'Campo Ano de Publicação é obrigatório'
+            'required.published' => 'Campo Ano de Publicação é obrigatório',
+            'digits.published' => 'O campo ano deve ter exatamente 4 dígitos.',
+            'integer.published' => 'O campo ano deve conter apenas números.',
+            'min.published' => 'O ano deve ser no mínimo 1900.',
+            'max.published' => 'O ano não pode ser maior que o ano atual.',
         ];
     }
 }
