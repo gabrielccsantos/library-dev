@@ -1,41 +1,44 @@
 #LIBRARY DEV
 
-Este projeto é um CRUD (Create, Read, Update, Delete) básico desenvolvido com o framework Laravel. O sistema permite criar, visualizar, atualizar e deletar registros no banco de dados.
+This project is a basic CRUD (Create, Read, Update, Delete) developed with the Laravel framework. The system allows you to create, view, update, and delete records in the database.
 
-+ TECNOLOGIAS UTILIZADAS
+TECHNOLOGIES USED
 + Composer (2.7.8)
 + Laravel (11.x)
 + MySQL
-+ XAMPP
++XAMPP
 
-##ARA INSTALAR E RODAR O PROJETO
+##TO INSTALL AND RUN THE PROJECT
 
-1º Baixe o projeto do github
-+ git clone git@github.com:gabrielccsantos/library-dev.git
+1st Download the project from GitHub
 
-2º Acesse a pasta onde baixou o projeto
-+ cd seu-repositório
++ git clone git@github.com/library-dev.git
 
-Abra o projeto na sua IDE de preferência (A utilizada para programar foi o VS Code)
+2nd Navigate to the folder where the project was downloaded
 
-Agora um pouco mais de atenção para rodar o projeto na sua máquina.
++ cd your-repository
 
-abra o terminal e execute os seguintes comando
+Open the project in your preferred IDE (VS Code was used for development)
 
-3º Instalar as dependências do Composer
+Now, pay close attention to running the project on your machine.
+
+Open the terminal and run the following commands:
+
+3rd Install Composer dependencies
+
 + composer install
 
-###4º Copie o arquivo .env.example
+###4th Copy the .env.example file
 
-Depois de copiar ele ficará assim: .env.example.copy
+After copying, it will look like this: .env.example.copy
 
-Apague o '.example.copy' e apenas deixe .env
+Delete the '.example.copy' and leave it as .env
 
-5º Gere uma nova chave de aplicação
-Execute esse comando no terminal no source da pasta
-+ php artisan key:generate
+5th Generate a new application key Run this command in the terminal at the root of the folder
 
-###6º Configurar as variáveis de ambiente do banco de dados
++ php artisan key
+
+###6th Configure the database environment variables
 
 + DB_CONNECTION=mysql
 + DB_HOST=127.0.0.1
@@ -44,20 +47,22 @@ Execute esse comando no terminal no source da pasta
 + DB_USERNAME=root
 + DB_PASSWORD=
 
-7º Rode as migrações para criar as tabelas no banco de dados
+7th Run the migrations to create the tables in the database
+
 + php artisan migrate
 
-8º Para iniciar o projeto:
+8th To start the project:
+
 + php artisan serve
 
-No terminal irá aparecer um link com o localhost
+A link with localhost will appear in the terminal
 
 Endpoints:
 
-+ index -> /book-index (GET) - Listagem de todos os livros
-+ create -> /book-create (GET) - formulário de cadastro de um novo livro
-+ store -> /book-store (POST) - Rota para onde o cadastro é enviado
-+ show -> /book-show/{id} (GET) - Visualização do livro segundo ID
-+ edit -> /book-edit/{id} (GET) - Formulário de edição de um livro
-+ update -> /book-update/{id} (PUT) - Rota para onde a edição é enviada
-+ destroy -> /book-destroy/{id} (DELETE) - Rota para a exclusão de algum registro
++ index -> /book-index (GET) - Listing all books
++ create -> /book-create (GET) - Form to register a new book
++ store -> /book-store (POST) - Route where the registration is submitted
++ show -> /book-show/{id} (GET) - View a book by its ID
++ edit -> /book-edit/{id} (GET) - Form to edit a book
++ update -> /book-update/{id} (PUT) - Route where the edit is submitted
++ destroy -> /book-destroy/{id} (DELETE) - Route to delete a record
