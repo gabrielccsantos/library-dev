@@ -8,7 +8,8 @@ use App\Models\BookModel;
 
 class BookController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $books = BookModel::orderBy('created_at')->get();
         return view('book.index', ['books' => $books]);
     }
@@ -17,7 +18,8 @@ class BookController extends Controller
         return view('book.create');
     }
 
-    public function store(BookRequest $bookRequest){
+    public function store(BookRequest $bookRequest)
+    {
         
         $bookRequest->validated();
                 
@@ -26,15 +28,18 @@ class BookController extends Controller
         return redirect()->route('book.show', ['bookModel' => $bookModel->id])->with('sucess', "Cadastro realizado com sucesso");
     }
 
-    public function show(BookModel $bookModel){
+    public function show(BookModel $bookModel)
+    {
         return view('book.show', ['bookModel' => $bookModel]);
     }
 
-    public function edit(BookModel $bookModel){
+    public function edit(BookModel $bookModel)
+    {
         return view('book.edit', ['bookModel' => $bookModel]);
     }
 
-    public function update(BookRequest $bookRequest, BookModel $bookModel){
+    public function update(BookRequest $bookRequest, BookModel $bookModel)
+    {
         $bookRequest->validated();
         
         $bookModel->update([
@@ -46,7 +51,8 @@ class BookController extends Controller
         return redirect()->route('book.show', ['bookModel' => $bookModel->id])->with('sucess', "Edição realizada com sucesso");
     }
 
-    public function destroy(BookModel $bookModel){
+    public function destroy(BookModel $bookModel)
+    {
         $bookModel->delete();
 
         return redirect()->route('book.index')->with('sucess', "Livro excluído com sucesso");
