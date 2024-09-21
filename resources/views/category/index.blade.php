@@ -10,6 +10,13 @@
 
 @endif
 </div>
+<div>
+    @if(session('unsucess'))
+    <span style="color: red;">
+    {{session('unsucess')}}
+    </span> 
+    @endif
+</div>
 <section>
     <table class="table table-primary table-striped-columns">
         <thead>

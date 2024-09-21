@@ -51,6 +51,10 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        if ($category->books()->count() > 0) {
+            return redirect()->route('category.index')->with('unsucess', 'Não é possível excluir a categoria. Existem livros relacionados a ela.');
+        }
+
         $category->delete();
 
         return redirect()->route('category.index')->with('sucess', "Categoria excluída com sucesso");
