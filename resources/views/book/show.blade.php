@@ -12,15 +12,15 @@
 <section>
     <div class="d-flex justify-content-center align-items-center">
         <div class="bg-light rounded p-3" style="width: 500px;">
-            Titulo do livro: {{$bookModel->title}} <br>
-            Categoria do livro: {{$bookModel->category}} <br>
-            Ano de publicação: {{$bookModel->published}} <br>
-            Data de Cadastro na livraria: {{$bookModel->created_at->format('H:i:s d/m/Y')}}
+            Titulo do livro: {{$book->title}} <br>
+            Categoria do livro: {{$book->category}} <br>
+            Ano de publicação: {{$book->published}} <br>
+            Data de Cadastro na livraria: {{$book->created_at->format('H:i:s d/m/Y')}}
             <br>
             <br>
             <div>
-                <form action="{{route('book.destroy', ['bookModel' => $bookModel->id])}}" method="post">
-                    <a href="{{route('book.edit', ['bookModel' => $bookModel->id])}}">
+                <form action="{{route('book.destroy', ['book' => $book->id])}}" method="post">
+                    <a href="{{route('book.edit', ['book' => $book->id])}}">
                         <button type="button" class="btn btn-primary">Editar</button>
                     </a>
                     @csrf

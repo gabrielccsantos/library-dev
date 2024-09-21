@@ -31,10 +31,10 @@
                 <td scope="row">{{$book->published}}</td>
                 <td scope="row">{{$book->created_at->format('H:i:s d/m/Y')}}</td>
                 <td scope="row">
-                    <a href="{{route('book.show', ['bookModel' => $book->id])}}">
+                    <a href="{{route('book.show', ['book' => $book->id])}}">
                         <button type="button" class="btn btn-primary">Visualizar</button>
                     </a>
-                    <a href="{{route('book.edit', ['bookModel' => $book->id])}}">
+                    <a href="{{route('book.edit', ['book' => $book->id])}}">
                         <button type="button" class="btn btn-primary">Editar</button>
                     </a>
                 </td>
