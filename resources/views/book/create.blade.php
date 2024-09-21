@@ -23,11 +23,21 @@
                     <label for="title">Titulo do livro: </label>
                     <input type="text" name="title" id="title" value="{{old('title')}}">
                 </div>
-                
+
                 <div class="mb-3">
                     <label for="published">Ano de publicação: </label>
                     <input type="text" name="published" id="published" value="{{old('published')}}">
-                </div class="mb-3">
+                </div>
+
+                <div class="mb-3">
+                    <label for="category_id">Categoria: </label>
+                    <select name="category_id" id="category_id" required>
+                        <option value="">Selecione uma categoria</option>
+                        @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="mb-3">
                     <input type="submit" value="Cadastrar" class="btn btn-primary">

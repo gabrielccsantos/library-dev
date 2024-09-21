@@ -14,6 +14,7 @@
         <div class="bg-light rounded p-3" style="width: 500px;">
             Titulo do livro: {{$book->title}} <br>
             Ano de publicação: {{$book->published}} <br>
+            Categoria do livro: {{$book->category->name}} <br>
             Data de Cadastro na livraria: {{$book->created_at->format('H:i:s d/m/Y')}}
             <br>
             <br>

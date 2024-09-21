@@ -23,7 +23,8 @@ class BookRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'published' => 'required|digits:4|integer|min:1900|max:' . date('Y')
+            'published' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
+            'category_id' => 'required'
         ];
     }
 
@@ -36,6 +37,7 @@ class BookRequest extends FormRequest
             'integer.published' => 'O campo ano deve conter apenas números.',
             'min.published' => 'O ano deve ser no mínimo 1900.',
             'max.published' => 'O ano não pode ser maior que o ano atual.',
+            'required.category_id' => 'O campo categoria é obrigatório'
         ];
     }
 }
