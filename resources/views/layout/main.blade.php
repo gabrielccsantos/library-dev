@@ -17,6 +17,14 @@
         <nav class="navbar bg-info justify-content-center align-items-center">
             <div>
 
+                <a href="{{route('category.index')}}">
+                    <button type="button" class="btn btn-primary">Listar todas as categoria</button>
+                </a>
+                <a href="{{route('category.create')}}">
+                    <button type="button" class="btn btn-primary">Cadastrar uma nova categoria</button>
+                </a>
+            </div>
+            <div>
                 <a href="{{route('book.index')}}">
                     <button type="button" class="btn btn-primary">Listar todos os livros</button>
                 </a>
