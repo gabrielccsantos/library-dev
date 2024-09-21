@@ -16,7 +16,6 @@
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Título</th>
-                <th scope="col">Categoria</th>
                 <th scope="col">Ano de publicação</th>
                 <th scope="col">Data de Cadastro</th>
                 <th scope="col">Ação</th>
@@ -27,7 +26,6 @@
             <tr>
                 <th scope="row">{{$book->id}}</th>
                 <td scope="row">{{$book->title}}</td>
-                <td scope="row">{{$book->category}}</td>
                 <td scope="row">{{$book->published}}</td>
                 <td scope="row">{{$book->created_at->format('H:i:s d/m/Y')}}</td>
                 <td scope="row">

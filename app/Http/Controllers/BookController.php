@@ -44,7 +44,6 @@ class BookController extends Controller
         
         $book->update([
             'title' => $bookRequest->title,
-            'category' => $bookRequest->category,
             'published' => $bookRequest->published,
         ]);
 

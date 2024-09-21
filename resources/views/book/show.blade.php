@@ -13,7 +13,6 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="bg-light rounded p-3" style="width: 500px;">
             Titulo do livro: {{$book->title}} <br>
-            Categoria do livro: {{$book->category}} <br>
             Ano de publicação: {{$book->published}} <br>
             Data de Cadastro na livraria: {{$book->created_at->format('H:i:s d/m/Y')}}
             <br>
