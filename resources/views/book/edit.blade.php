@@ -29,6 +29,19 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="mb-3">
+                    <label for="authors">Autores:</label>
+                    <select name="authors[]" id="authors" class="form-control" multiple>
+                        @foreach($authors as $author)
+                        <option name="authors[]" value="{{ $author->id }}" {{ collect(old('authors'))->contains($author->id) ? 'selected' : '' }}>
+                            {{ $author->name }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @error('authors')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
                 <br>
                 <div>
                     <input type="submit" value="Editar" class="btn btn-primary">
