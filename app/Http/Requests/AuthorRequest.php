@@ -22,7 +22,14 @@ class AuthorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+        ];
+    }
+
+    public function mensages(): array
+    {
+        return [
+            'required.name' => 'Campo Nome do categoria é obrigatório',
         ];
     }
 }
