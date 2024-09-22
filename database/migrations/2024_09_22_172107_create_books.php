@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('published');
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('category_id');
             $table->timestamps();
         });
     }
@@ -26,8 +26,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('books');
-        Schema::table('books', function (Blueprint $table){
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+        Schema::dropIfExists('books', function(Blueprint $table){
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('restrict');
         });
     }
 };
