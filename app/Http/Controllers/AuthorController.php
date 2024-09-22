@@ -50,6 +50,10 @@ class AuthorController extends Controller
 
     public function destroy(Author $author)
     {
+        if ($author->books()->count() > 0) {
+            return redirect()->route('category.index')->with('unsucess', 'Não é possível excluir a categoria. Existem livros relacionados a ela.');
+        }
+        
         $author->delete();
 
         return redirect()->route('author.index')->with('sucess', "Autor excluído com sucesso");
