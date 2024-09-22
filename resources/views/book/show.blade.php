@@ -15,6 +15,17 @@
             Titulo do livro: {{$book->title}} <br>
             Ano de publicação: {{$book->published}} <br>
             Categoria do livro: {{$book->category->name}} <br>
+            <p>Autores:</p>
+                @if($book->authors->isEmpty())
+                    <span>Sem autores atribuídos</span>
+                @else
+                    <ul>
+                        @foreach($book->authors as $author)
+                            <li>{{ $author->name }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+            </p>
             Data de Cadastro na livraria: {{$book->created_at->format('H:i:s d/m/Y')}}
             <br>
             <br>
