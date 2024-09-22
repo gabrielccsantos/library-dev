@@ -9,7 +9,7 @@
                 @csrf
                 @method('PUT')
                 <div>
-                    <label for="name">Nome da categoria: </label>
+                    <label for="name">Nome do Autor: </label>
                     <input type="text" name="name" id="name" value="{{old('name', $author->name)}}">
                 </div>
                 <br>
