@@ -24,7 +24,9 @@ class BookRequest extends FormRequest
         return [
             'title' => 'required',
             'published' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'authors' => 'required|array', 
+            'authors.*' => 'exists:authors,id',
         ];
     }
 
