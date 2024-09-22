@@ -14,7 +14,7 @@
 
     <head>
         <h1>Library Dev</h1>
-        <nav class="navbar bg-info justify-content-center align-items-center">
+        <nav class="navbar bg-info justify-content-center align-items-center" style="width: 1150px;">
             <div>
 
                 <a href="{{route('category.index')}}">
@@ -24,6 +24,17 @@
                     <button type="button" class="btn btn-primary">Cadastrar uma nova categoria</button>
                 </a>
             </div>
+
+            <div>
+
+                <a href="{{route('author.index')}}">
+                    <button type="button" class="btn btn-primary">Listar todos os autores</button>
+                </a>
+                <a href="{{route('author.create')}}">
+                    <button type="button" class="btn btn-primary">Cadastrar um novo autor</button>
+                </a>
+            </div>
+
             <div>
                 <a href="{{route('book.index')}}">
                     <button type="button" class="btn btn-primary">Listar todos os livros</button>
