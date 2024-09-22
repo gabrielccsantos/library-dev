@@ -13,6 +13,17 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="bg-light rounded p-3" style="width: 500px;">
             Nome do Autor: {{$author->name}} <br>
+            <p>Autores:</p>
+                @if($author->books->isEmpty())
+                    <span>Sem autores atribuídos</span>
+                @else
+                    <ul>
+                        @foreach($author->books as $book)
+                            <li>{{ $book->title }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+            </p>
             Data de Cadastro na livraria: {{$author->created_at->format('H:i:s d/m/Y')}}
             <br>
             <br>
