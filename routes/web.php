@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -27,4 +28,14 @@ Route::controller(CategoryController::class)->group(function(){
     Route::get('/categories/{category}/edit', 'edit')->name('category.edit');
     Route::put('/categories/{category}/', 'update')->name('category.update');
     Route::delete('/categories/{category}', 'destroy')->name('category.destroy');
+});
+
+Route::controller(AuthorController::class)->group(function(){
+    Route::get('/authors', 'index')->name('author.index');
+    Route::get('/authors/create', 'create')->name('author.create');
+    Route::post('/authors', 'store')->name('author.store');
+    Route::get('/authors/{author}', 'show')->name('author.show');
+    Route::get('/authors/{author}/edit', 'edit')->name('author.edit');
+    Route::put('/authors/{author}/', 'update')->name('author.update');
+    Route::delete('/authors/{author}', 'destroy')->name('author.destroy');
 });
