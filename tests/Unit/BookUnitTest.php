@@ -6,9 +6,9 @@ use Tests\TestCase;
 use App\Http\Requests\BookRequest;
 use Illuminate\Support\Facades\Validator;
 
-class BookTest extends TestCase
+class BookUnitTest extends TestCase
 {
-      
+
     public function test_book_valid_integer()
     {
         $data = ['title' => 'Livro Exemplo', 'category' => 'Ficção', 'published' => 'abc'];
@@ -17,9 +17,10 @@ class BookTest extends TestCase
 
         $this->assertTrue($validator->fails());
         $this->assertEquals('O campo ano deve conter apenas números.', $validator->errors()->first('published'));
-}
+    }
 
-    public function test_book_year_valid(){
+    public function test_book_year_valid()
+    {
         $data = ['title' => 'Livro Exemplo', 'category' => 'Ficção', 'published' => 'abc'];
         $request = new BookRequest();
         $validator = Validator::make($data, $request->rules());
@@ -37,6 +38,5 @@ class BookTest extends TestCase
         $validator = Validator::make($data, $request->rules());
         $this->assertTrue($validator->fails());
         $this->assertEquals('O campo ano deve ter exatamente 4 dígitos.', $validator->errors()->first('published'));
-    
     }
 }
