@@ -50,7 +50,7 @@ class CategoryFeatureTest extends TestCase
         $response->assertSee($category->name);
     }
 
-    public function test_category_edit_success()
+    public function test_category_update_success()
     {
         $category = Category::factory()->create();
 
@@ -68,7 +68,7 @@ class CategoryFeatureTest extends TestCase
         ]);
     }
 
-    public function test_category_delete_success()
+    public function test_category_destroy_success()
     {
         $category = Category::factory()->create();
 
@@ -81,7 +81,7 @@ class CategoryFeatureTest extends TestCase
         ]);
     }
 
-    public function test_category_delete_fails_linked_to_books()
+    public function test_category_destroy_fails_linked_to_books()
     {
         $category = Category::factory()->create();
         $book = Book::factory()->for($category)->create();

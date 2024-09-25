@@ -92,7 +92,7 @@ class BookFeatureTest extends TestCase
         $response->assertSee($book->published);
     }
 
-    public function test_book_edit_success()
+    public function test_book_update_success()
     {
         $category = Category::factory()->create();
         $book = Book::factory()->for($category)->hasAuthors(2)->create();
@@ -118,7 +118,7 @@ class BookFeatureTest extends TestCase
         $this->assertCount(2, $book->fresh()->authors);
     }
 
-    public function test_book_edit_fails_invalid_data()
+    public function test_book_update_fails_invalid_data()
     {
         $category = Category::factory()->create();
         $book = Book::factory()->for($category)->create();
