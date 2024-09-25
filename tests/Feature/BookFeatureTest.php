@@ -79,7 +79,7 @@ class BookFeatureTest extends TestCase
         $response->assertSessionHasErrors('published');
     }
 
-    public function test_show_book__success()
+    public function test_book_show__success()
     {
         $book = Book::factory()->create();
 
@@ -142,7 +142,7 @@ class BookFeatureTest extends TestCase
         ]);
     }
 
-    public function test_destroy_book_success()
+    public function test_book_destroy_success()
     {
         $category = Category::factory()->create();
         $book = Book::factory()->for($category)->create();
